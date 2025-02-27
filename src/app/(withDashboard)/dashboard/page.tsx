@@ -20,7 +20,7 @@ const DashboardPage = async () => {
             alt="user image"
             height={100}
             width={100}
-            src={session?.user?.image}
+            src={session?.user?.image || ""}
           />
         </div>
       )}

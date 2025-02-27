@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { loginUser } from "@/utils/loginUser";
 import { signIn } from "next-auth/react";
@@ -16,7 +17,7 @@ const LoginPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: {},
   } = useForm<FormValues>();
   const router = useRouter();
   const onSubmit = async (data: FormValues) => {
@@ -113,7 +114,7 @@ const LoginPage = () => {
             <button
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl: "/dashboard",
                 })
               }
               className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full shadow-md hover:bg-gray-200"
