@@ -1,10 +1,10 @@
 import { UserData } from "@/app/register/page";
 
 export const registerUser = async (data: UserData) => {
-  const res = fetch(`${process.env.BACKEND_URL}/register`, {
+  const res = await fetch("http://localhost:5000/api/v1/register", {
     method: "POST",
     headers: {
-      "content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
     cache: "no-store",
